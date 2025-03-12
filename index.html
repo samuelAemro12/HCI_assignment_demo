@@ -37,6 +37,35 @@
       </div>
     </div>
   </section>
+<section class="py-10 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Share Your Ideas</h2>
+      <p class="text-lg text-center mb-6">We'd love to hear from you! Enter your details and share your thoughts.</p>
+      <form id="ideaForm" class="max-w-md mx-auto space-y-4">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required
+            class="mt-1 block w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required
+            class="mt-1 block w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        <div>
+          <label for="ideas" class="block text-sm font-medium text-gray-700">Your Ideas</label>
+          <textarea id="ideas" name="ideas" rows="4" placeholder="Share your ideas here..." required
+            class="mt-1 block w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500"></textarea>
+        </div>
+        <div class="flex justify-center">
+          <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 transition-colors">
+            Submit Your Idea
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
   <footer class="bg-gray-800 text-white py-8">
     <div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
       <div class="flex flex-col items-center justify-center space-y-2">
