@@ -1,21 +1,18 @@
-// Wait for the DOM to fully load before executing any scripts
 document.addEventListener('DOMContentLoaded', function () {
     console.log("JavaScript loaded successfully!");
-  
-    // Function to handle form submission on index.html
+
     function handleFormSubmission() {
       const ideaForm = document.getElementById('ideaForm');
   
       if (ideaForm) {
         ideaForm.addEventListener('submit', function (event) {
-          event.preventDefault(); // Prevent default form submission behavior
+          event.preventDefault(); 
   
-          // Get form values
+     
           const nameInput = document.getElementById('name').value.trim();
           const emailInput = document.getElementById('email').value.trim();
           const ideasInput = document.getElementById('ideas').value.trim();
   
-          // Validate inputs without regex
           if (!nameInput || !emailInput || !ideasInput) {
             alert('Please fill out all fields.');
             return;
@@ -25,42 +22,35 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Please enter a valid email address.');
             return;
           }
-  
-          // Display success message
           alert(`Thank you, ${nameInput}! Your idea has been submitted.`);
   
-          // Reset the form after submission
           ideaForm.reset();
         });
       }
     }
   
-    // Email validation function (without regex)
     function validateEmail(email) {
       const lowerCaseEmail = email.toLowerCase();
       const atIndex = lowerCaseEmail.indexOf('@');
       const dotIndex = lowerCaseEmail.lastIndexOf('.');
   
-      // Simple checks for email validity
       if (atIndex < 1 || dotIndex < atIndex + 2 || dotIndex + 2 >= lowerCaseEmail.length) {
         return false; // Invalid format
       }
       return true; // Valid format
     }
-  
-    // Function to handle smooth scrolling for anchor links
+
     function enableSmoothScrolling() {
       const scrollLinks = document.querySelectorAll('a[href^="#"]');
   
       scrollLinks.forEach(link => {
         link.addEventListener('click', function (event) {
-          event.preventDefault(); // Prevent default anchor behavior
+          event.preventDefault(); 
   
-          const targetId = this.getAttribute('href').substring(1); // Get the target ID
-          const targetElement = document.getElementById(targetId); // Find the target element
+          const targetId = this.getAttribute('href').substring(1); 
+          const targetElement = document.getElementById(targetId); 
   
           if (targetElement) {
-            // Scroll to the target element smoothly
             targetElement.scrollIntoView({
               behavior: 'smooth',
               block: 'start'
@@ -94,34 +84,30 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   
-    // Function to dynamically update navigation buttons on player profile pages
     function setupDynamicNavigationButtons() {
-      const currentPage = window.location.href.split('/').pop(); // Get the current page filename
-      const playerPages = ['samuel.html', 'feven.html', 'wogene.html']; // List of player profile pages
-      const nextButton = document.querySelector('.next-button'); // Find the "Next" button
+      const currentPage = window.location.href.split('/').pop(); 
+      const playerPages = ['samuel.html', 'feven.html', 'wogene.html']; 
+      const nextButton = document.querySelector('.next-button'); 
   
       if (nextButton && playerPages.includes(currentPage)) {
         const currentIndex = playerPages.indexOf(currentPage); // Get the index of the current page
         const nextIndex = (currentIndex + 1) % playerPages.length; // Calculate the next page index
         const nextPage = playerPages[nextIndex]; // Get the next page filename
   
-        // Update the "Next" button's href attribute
+
         nextButton.setAttribute('href', nextPage);
   
-        // Optional: Add a tooltip or title to the button for better accessibility
         nextButton.setAttribute('title', `Go to ${nextPage.replace('.html', '')}'s Profile`);
       }
     }
   
-    // Function to add hover effects to images in cards (for index.html)
     function addImageHoverEffects() {
-      const memberCards = document.querySelectorAll('.bg-white.p-6.rounded-lg.shadow-md'); // Select all member cards
+      const memberCards = document.querySelectorAll('.bg-white.p-6.rounded-lg.shadow-md');
   
       memberCards.forEach(card => {
-        const img = card.querySelector('img'); // Find the image inside each card
+        const img = card.querySelector('img'); 
   
         if (img) {
-          // Add hover effect to make the image slightly grow when hovered
           img.addEventListener('mouseenter', () => {
             img.style.transform = 'scale(1.1)';
             img.style.transition = 'transform 0.3s ease';
@@ -135,14 +121,13 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   
-    // Function to handle back-to-home navigation
     function setupHomeNavigation() {
-      const homeIcons = document.querySelectorAll('header nav a img'); // Select all home icons
+      const homeIcons = document.querySelectorAll('header nav a img'); 
   
       homeIcons.forEach(icon => {
         icon.addEventListener('click', function () {
           alert('Returning to the home page...');
-          window.location.href = 'index.html'; // Redirect to the home page
+          window.location.href = 'index.html'; 
         });
       });
     }
@@ -150,23 +135,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to initialize all features
     function initializeFeatures() {
       console.log("Initializing features...");
-  
-      // Enable smooth scrolling
+
       enableSmoothScrolling();
   
-      // Handle form submission (if applicable)
       handleFormSubmission();
   
-      // Set up dynamic navigation buttons
       setupDynamicNavigationButtons();
   
-      // Add hover effects to images in cards
       addImageHoverEffects();
   
-      // Set up home navigation
       setupHomeNavigation();
     }
   
-    // Call the initialization function
     initializeFeatures();
   });
