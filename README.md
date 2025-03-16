@@ -30,6 +30,7 @@ The website consists of four main HTML files:
 - **Consistent Styling**: Uniform design across all pages using Tailwind CSS.
 - **Accessibility**: Includes alt text for images, keyboard navigation, and high-contrast colors.
 - **Error Prevention & Recovery**: Form validation ensures users cannot submit incomplete data, and error messages guide corrections.
+- - **Simple Design**: Simple to navigate and understand.
 
 ---
 
